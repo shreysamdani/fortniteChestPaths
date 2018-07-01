@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="Chests">
+<head>
+	<title></title>
+	<!-- angularjs -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+	<!-- leaflet -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+	integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+	crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
+	integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+	crossorigin=""></script>
+	<!-- leaflet fullscreen -->
+	<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+	<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+		
+	<!-- controller -->
+	<script src="chestsMapController.js"></script>
+</head>
+
+	<style>
+
+		.map {
+			/*position:absolute;*/
+			opacity: 1; 
+			width: 850px;
+			height: 850px;
+		}
+
+		.leaflet-container {
+		    background-color:rgba(255,0,0,0.0);
+		}
+
+		.userInput {
+			display: inline-block;
+		}
+
+		.mainBody {
+			display: table;
+    		vertical-align: middle;
+    		margin: auto;
+
+		}
+
+		header {
+			height: 100px;
+			line-height: 100px;
+			background-color: #212121; 
+			font-size: 15px;
+
+		}
+
+		header h1 {
+			display: inline-block;
+			float: right
+			margin-top: 0;
+		}
+
+		.headerChest {
+			float: left
+			height: 70px;
+			width: 70px
+		}
+
+
+
+	</style>
+
+
+</head>
+<body ng-controller="ChestCtrl">
+	<header>
+		<img class="headerChest" src="images/Chest.png">
+		<h1>Fornite Chest Distances </h1>
+	</header>
+
+	<br/>
+
+	<div class="mainBody">
+		<div id="chestMap" class="map"></div>
+		<br/>
+		<div class="userInput">
+			<md-input-container>
+				<label>Number of chests</label>
+				<input ng-model="numChests">
+			</md-input-container>
+		</div>
+	</div>
+
+	
+
+</body>
+</html>
